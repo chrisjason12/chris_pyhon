@@ -1,0 +1,18 @@
+select "car","mpg" from cars
+select "car","origin" from cars
+select * from cars
+select distinct "origin" from cars
+select "car" from cars limit 3
+--limit the results
+select "car" from cars limit 3
+select "car" from cars order by "car"
+select "car" from cars order by "cylinders"
+select "car","mpg","cylinders","weight"
+from cars
+order by "mpg","cylinders"
+select "car","mpg","cylinders",weight
+from cars
+order by 2,3
+select "car","mpg","cylinders","weight"
+from cars
+order by "mpg" 

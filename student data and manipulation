@@ -1,0 +1,4 @@
+select "students" from students
+--filter exact date
+select "name", "joining date" from students
+where "joining date" = '2022-07-05'
