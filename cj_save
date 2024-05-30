@@ -1,0 +1,14 @@
+--create stored procedure
+create or replace procedure addcourse
+(
+id_ integer,
+course_ varchar,
+duration_ integer
+)
+language plpgsql as
+$$ 
+begin
+    insert into course("id","course","duration")
+	values(id_, course_, duration_);
+end
+$$

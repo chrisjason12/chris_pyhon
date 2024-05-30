@@ -1,0 +1,33 @@
+create table stu(sid integer,sname varchar(50),
+course varchar(50))
+insert into stu(sid,sname,course) values(101,'anand','biology'),
+(102,'bala','cs'),(103,'bharath','biology'),(104,'vimal','biology')
+select * from stu
+
+create table mark(sid integer,mark integer,course varchar(50))
+insert into mark(sid,mark,course) values (101,100,'biology'),
+(105,99,'commerse'),(102,89,'cs'),(107,67,'accountancy'),
+(108,89,'cs')
+select * from mark
+select stu.sid,stu.sname,stu.course,mark from stu
+left join mark on stu.sid = mark where mark.sid is null
+
+select stu.sid,stu.sname,stu.course,mark from stu
+right join mark on stu.sid = mark.sid
+
+select stu.sid,stu.sname,stu.course,mark from stu
+full join mark on stu.sid = mark.sid where stu.sid is null or
+mark.sid is null
+
+select students."name",course."course",course."duration"
+from students, course
+
+--inner join 
+select * from basics limit 100
+
+select * from ratings limit 100
+
+select "primarytitle","averagerating","numvotes"
+from basics, ratings
+where basics."tcost" = ratings."tconst"
+is null
