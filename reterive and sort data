@@ -1,0 +1,122 @@
+select "car","mpg" from cars
+select "car","origin" from cars
+select * from cars
+select distinct "origin" from cars
+select "car" from cars limit 3
+--limit the results
+select "car" from cars limit 3
+select "car" from cars order by "car"
+select "car" from cars order by "cylinders"
+select "car","mpg","cylinders","weight"
+from cars
+order by "mpg","cylinders"
+select "car","mpg","cylinders",weight
+from cars
+order by 2,3
+select "car","mpg","cylinders","weight"
+from cars
+order by "mpg" 
+select "car","mpg","cylinders","weight"
+from cars
+order by "mpg" desc ,3
+select "car","mpg","cylinders","weight"
+from cars
+where "car" = 'ford torino'
+select "car","mpg","cylinders","weight"
+from cars
+where "cylinders">6
+select "cars","mpg","cylinders","weight"
+from cars
+where "cylinders" between 3 and 5
+select "cars","mpg","cylinders","weight"
+from cars
+where "cylinders" is null
+select "cars","mpg","cylinders","weight" from cars
+where "mpg" = 17 and "cylinders" = 8
+select "cars","mpg", "cylinders","weight" from cars
+where "mpg" = 17 or "mpg" = 15
+select "cars","mpg","cylinders","weight" from cars
+where "mpg" = 17 or "mpg" = 15 and "cylinders" = 6
+select "cars","mpg","cylinders","weight" from cars
+where ("mpg" = 17 or "mpg" = 15) and "cylinders" = 6
+select "cars","mpg","cylinders","weight" from cars
+where "mpg" in (14,15,16)
+select "cars","mpg","cylinders","weight" from cars
+where "mpg" not in (17,18)
+select "cars","mpg","cylinders","weight" from cars
+where "car" like 'fords'
+select "cars","mpg","cylinders","weight" from cars
+where "car" like '%skylark%'
+#select "car","mpg","cylinders","weight" from cars
+where "car" like '%skylark___'
+select "car","mpg","cylinders","weight" from cars
+where "car" like  '%skylark___'
+select right("car",6) from cars
+select upper ("car") from cars
+select lower("car") from cars
+select ltrim ("car") from cars
+select rtrim ("car") from cars
+select trim ("car") from cars
+select "car",length ("car") from cars
+select "car", substring("car",10,9) from cars
+select "car",abs("mpg") from cars
+--multiplication "mpg" with pi value
+select "car","mpg" * pi() from cars
+--multiplication "cylinders" with pi value
+select "car","cylinders" * pi() from cars
+select "car", sqrt("mpg") from cars
+select "car", sqrt("cylinders") from cars
+select "car","mpg",
+SIN(radians("mpg")),
+COS(radians("mpg")),
+TAN(radians("mpg"))
+from cars
+select "car","cylinders",
+SIN(radians("cylinders")),
+COS(radians("cylinders")),
+TAN(radians("cylinders"))
+from cars
+--REPLACE FUNCTION
+select REPLACE ("origin",'us','usa') as "origin" from cars
+select "car"||' : '|| "weight" from cars
+select "car"||' : '|| "weight"
+as "car : weight" from cars
+select "car","weight" * 1000
+as "weight(grams)" from cars
+select "car","mpg"/"cylinders"
+as "mpg/cyldr" from cars
+select avg("weight")
+as "avg weight" from cars
+select count("weight")
+as "count wgt" from cars
+select max("weight")
+as "max wgt" from cars
+select min("weight")
+as "min wgt" from cars
+select sum("weight") from cars
+select "car","weight" from cars
+where "weight" = (select min("weight")from cars)
+select count("origin")
+from cars
+select count(distinct("origin"))
+from cars
+select count(*) as items
+min("weight") as "min_wewight"
+max("weight") as "max_weight"
+avg("weight") as "avg_weight"
+from cars
+select distinct("cylinders")
+from cars where "weight" > 2000
+select "car","cylinders","weight" from cars where "cylinders"
+in(select distinct ("cylinders") from cars where "weight"
+  in(select min("weight")from cars where "origin" = 'japan'))
+     order  by "weight" desc
+
+select "car","cylinders" from cars where "cylinders" = 6
+union
+select "car","cylinders" from cars where "origin" in ('japan','europe')
+select "car","cylinders" from cars where "cylinders" = 6
+union
+select "car","cylinders" from cars where "origin" 
+in ('japan','europe')
+order by "cylinders" desc
